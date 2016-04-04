@@ -3,7 +3,16 @@
  */
 public class AccountsPaginationController extends PaginationController {
 	
-	public static String legacyInstanceBaseUrl {get; set;}
+	public static String legacyInstanceBaseUrl {get {
+		
+		if(legacyInstanceBaseUrl == null){
+			legacyInstanceBaseUrl = LegacyAccountsHelper.getLegacyInstanceUrl();
+		}
+		
+		return legacyInstanceBaseUrl;
+	} 
+	
+	set;}
 
 	/**
 	 * List of accounts
