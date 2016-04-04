@@ -1,0 +1,68 @@
+<apex:component controller="AccountsPaginationController">
+
+	<!-- Attributes -->
+	<apex:attribute name="title" description="Table section title."
+		type="String" required="true" />
+
+	<apex:pageBlock id="accountsBlock">
+		<apex:actionFunction name="refreshPageSize"
+			action="{!refreshPageSize}" status="fetchStatus"
+			reRender="accountsBlock" />
+
+		<apex:pageBlockSection title="{!title}" collapsible="false"
+			columns="1">
+
+			<apex:pageBlockTable value="{!accounts}" var="account">
+				<apex:column headerValue="Account Id" width="100px">
+					<apex:outputLink value="{!legacyInstanceBaseUrl}/{!account.Id}"
+						target="_blank">{!account.Id}</apex:outputLink>
+				</apex:column>
+
+				<apex:column headerValue="Account Name">
+					<apex:outputField value="{!account.name}" />
+				</apex:column>
+
+				<apex:column headerValue="Phone" width="100px">
+					<apex:outputField value="{!account.phone}" />
+				</apex:column>
+			</apex:pageBlockTable>
+
+			<apex:panelGrid columns="8">
+				
+				Records: 
+				<apex:selectList value="{!maxPageSize}" multiselect="false" size="1"
+					onchange="refreshPageSize();">
+					<apex:selectOptions value="{!paginationSizeOptions}" />
+				</apex:selectList>
+
+				<apex:commandButton status="fetchStatus" reRender="accountsBlock"
+					value="First" action="{!first}" disabled="{!!hasPrevious}"
+					title="First Page" />
+
+				<apex:commandButton status="fetchStatus" reRender="accountsBlock"
+					value="Previous" action="{!previous}" disabled="{!!hasPrevious}"
+					title="Previous Page" />
+
+				<apex:commandButton status="fetchStatus" reRender="accountsBlock"
+					value="Next" action="{!next}" disabled="{!!hasNext}"
+					title="Next Page" />
+
+				<apex:commandButton status="fetchStatus" reRender="accountsBlock"
+					value="Last" action="{!last}" disabled="{!!hasNext}"
+					title="Last Page" />
+
+				<apex:outputText >{!IF(totalCount == 0, 'No Accounts found', TEXT(start) + '-' + TEXT(start + size - 1) + ' of ' + TEXT(totalCount) )}</apex:outputText>
+
+				<apex:outputPanel >
+					<apex:actionStatus id="fetchStatus">
+						<apex:facet name="start">
+                            Please wait while we fetch the data.
+                                <img src="/img/loading.gif" />
+						</apex:facet>
+					</apex:actionStatus>
+				</apex:outputPanel>
+			</apex:panelGrid>
+
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+</apex:component>

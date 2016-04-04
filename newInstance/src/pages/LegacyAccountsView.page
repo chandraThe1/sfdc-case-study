@@ -1,0 +1,46 @@
+<apex:page controller="LegacyAccountsController" tabStyle="Account"
+	sidebar="false">
+
+	<style type="text/css" />
+
+	<!-- Form to create new account  -->
+	<apex:form >
+		<apex:pageBlock id="newAccountBlock">
+			<apex:pageBlockSection title="Create New Account" collapsible="false"
+				columns="1">
+				<!-- Account Name -->
+				<apex:inputField value="{!newAccount.name}" />
+
+				<!-- Error Messages if Any -->
+				<apex:messages />
+
+				<!-- Panel to show the link after account has been created -->
+				<apex:outputPanel rendered="{! newAccountId!=null }">
+				    Account &nbsp;<apex:outputLink value="../{!newAccountId}"
+						id="accountLink" target="_blank">{!newAccountId}</apex:outputLink> created
+				</apex:outputPanel>
+
+				<!-- Panel to show the creation status -->
+				<apex:outputPanel >
+					<apex:actionStatus id="insertStatus">
+						<apex:facet name="start">
+                            Please wait while we create the account.
+                            <img src="/img/loading.gif" />
+						</apex:facet>
+					</apex:actionStatus>
+				</apex:outputPanel>
+
+				<!-- Create button -->
+				<apex:commandButton action="{!createNewAccount}" value="Create"
+					status="insertStatus" reRender="newAccountBlock" />
+
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+
+	<!-- Form to fetch legacy accounts  -->
+	<apex:form >
+		<c:PaginatedDataTable title="Legacy Accounts" />
+	</apex:form>
+
+</apex:page>
