@@ -8,6 +8,28 @@ The following assumptions were made when creating this application.
 - Since there is a 1-to-1 between the New and Legacy Accounts, if multiple accounts are returned from the legacy API, the first one is matched.
 - The "account matching" function is only pertinent for this use case and hence we cannot use a Trigger to update the account.
 
+
+# Architecture
+### Overview
+
+### Class Diagram
+
+#### New Instance
+![New Instance Class Diagram](artifacts/NewInstance-ClassDiagram.png)
+
+#### Legacy Instance
+![Legacy Instance Class Diagram](artifacts/OldInstance-ClassDiagram.png)
+
+### Sequence Diagram
+
+#### UI Flow
+![New Instance Flow](artifacts/NewInstaceFlow.png)
+#### Get API Flow
+![Get API Flow](artifacts/GetAccountsFlow.png)
+#### Query API Flow
+![Query API Flow](artifacts/QueryAccountsFlow.png)
+
+
 # Application Structure
 The application is broken down into two sub-projects/application:
   - **newinstance**: Contains the VF pages, Apex Controllers to be run on the new instance. This will host the page which the business user will access to create new account and to display all legacy accounts.
@@ -66,19 +88,6 @@ Below are the different components of the applications:
 
 ### Triggers
 - Based on Assumption 2, the Trigger option was ruled out. If a "after insert" trigger was used on the Account, it will always query and match the legacy account irrespective of where the account was created from.
-
-
-# UML Diagram
-### Class Diagram
-
-### Sequence Diagram
-
-#### Flow in New Instance
-![New Instance Flow](artifacts/NewInstaceFlow.png)
-#### Get API Flow
-![Get API Flow](artifacts/GetAccountsFlow.png)
-#### Query API Flow
-![Query API Flow](artifacts/QueryAccountsFlow.png)
 
 
 
