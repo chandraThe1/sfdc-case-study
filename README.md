@@ -69,28 +69,37 @@ Below are the different components of the applications:
 
 
 # UML Diagram
-Coming Soon
 ### Class Diagram
+
 ### Sequence Diagram
 
-[LegacyAccountsView.page]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/newInstance/src/pages/LegacyAccountsView.page>
-[LegacyAccountsController.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/newInstance/src/classes/LegacyAccountsController.cls>
-[LegacyAccountsHelper.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/newInstance/src/classes/LegacyAccountsHelper.cls>
-[PaginatedDataTable.component]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/newInstance/src/components/PaginatedDataTable.component>
-[AccountsPaginationController.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/newInstance/src/classes/AccountsPaginationController.cls>
-[PaginationController.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/newInstance/src/classes/PaginationController.cls>
-[AccountAPIResponse.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/newInstance/src/classes/AccountAPIResponse.cls>
-[AppException.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/newInstance/src/classes/AppException.cls>
-[AccountsTest.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/newInstance/src/classes/AccountsTest.cls>
-[MockGetHttpCallout.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/newInstance/src/classes/MockGetHttpCallout.cls>
-[GetAccountsService.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/oldInstance/src/classes/GetAccountsService.cls>
-[QueryAccountsService.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/oldInstance/src/classes/QueryAccountsService.cls>
-[AccountServiceHelper.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/oldInstance/src/classes/AccountServiceHelper.cls>
-[AccountDAO.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/oldInstance/src/classes/AccountDAO.cls>
-[AccountDAOImpl.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/oldInstance/src/classes/AccountDAOImpl.cls>
-[StdSetAccDAOImpl.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/oldInstance/src/classes/StdSetAccDAOImpl.cls>
-[AccountAPIRequest.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/oldInstance/src/classes/AccountAPIRequest.cls>
-[AccountAPIResponse2.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/oldInstance/src/classes/AccountAPIResponse.cls>
-[APIResponse.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/oldInstance/src/classes/APIResponse.cls>
-[APIException.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/oldInstance/src/classes/APIException.cls>
-[APITest.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/oldInstance/src/classes/APITest.cls>
+#### Flow in New Instance
+![New Instance Flow](artifacts/NewInstaceFlow.png)
+#### Get API Flow
+![Get API Flow](artifacts/GetAccountsFlow.png)
+#### Query API Flow
+![Query API Flow](artifacts/QueryAccountsFlow.png)
+
+
+
+[LegacyAccountsView.page]: <newInstance/src/pages/LegacyAccountsView.page>
+[LegacyAccountsController.cls]: <newInstance/src/classes/LegacyAccountsController.cls>
+[LegacyAccountsHelper.cls]: <newInstance/src/classes/LegacyAccountsHelper.cls>
+[PaginatedDataTable.component]: <newInstance/src/components/PaginatedDataTable.component>
+[AccountsPaginationController.cls]: <newInstance/src/classes/AccountsPaginationController.cls>
+[PaginationController.cls]: <newInstance/src/classes/PaginationController.cls>
+[AccountAPIResponse.cls]: <newInstance/src/classes/AccountAPIResponse.cls>
+[AppException.cls]: <newInstance/src/classes/AppException.cls>
+[AccountsTest.cls]: <newInstance/src/classes/AccountsTest.cls>
+[MockGetHttpCallout.cls]: <newInstance/src/classes/MockGetHttpCallout.cls>
+[GetAccountsService.cls]: <oldInstance/src/classes/GetAccountsService.cls>
+[QueryAccountsService.cls]: <oldInstance/src/classes/QueryAccountsService.cls>
+[AccountServiceHelper.cls]: <oldInstance/src/classes/AccountServiceHelper.cls>
+[AccountDAO.cls]: <oldInstance/src/classes/AccountDAO.cls>
+[AccountDAOImpl.cls]: <oldInstance/src/classes/AccountDAOImpl.cls>
+[StdSetAccDAOImpl.cls]: <oldInstance/src/classes/StdSetAccDAOImpl.cls>
+[AccountAPIRequest.cls]: <oldInstance/src/classes/AccountAPIRequest.cls>
+[AccountAPIResponse2.cls]: <oldInstance/src/classes/AccountAPIResponse.cls>
+[APIResponse.cls]: <oldInstance/src/classes/APIResponse.cls>
+[APIException.cls]: <oldInstance/src/classes/APIException.cls>
+[APITest.cls]: <oldInstance/src/classes/APITest.cls>
