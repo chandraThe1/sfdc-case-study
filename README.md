@@ -58,10 +58,10 @@ Below are the different components of the applications:
     * Querying the CustomSettings in APEX and invoking the Auth REST API
     * Passing the auth token to every other REST API call.
 - A better alternative was to use NamedCredential in the new instance. 
-    -  Using NamedCredential (and an AuthorizationProvider), we can do a one-time setup so that the API user of new instance to talk to api user of legacy instance using OAuth. 
+    -  Using NamedCredential (and an AuthorizationProvider), we can do a one-time setup so that the API user of new instance can talk to api user of legacy instance using OAuth. 
     -  This one-time set up configures the system-to-system authorizatoin and can be used in the Apex callouts
     -  No need to call Auth REST API before calling other REST APIs
-    -  The Http endpoint will be of the format 'callout:<NamedCredential>/<REST of the URL>'
+    -  The Http endpoint will be of the format 'callout:NamedCredentialName/REST of the URL'
 - Also, to protect against SOQL Injection, we execute a DML statement using parameters (using :) instead of String concatenation in Database.query().
 
 ### Triggers
@@ -69,7 +69,9 @@ Below are the different components of the applications:
 
 
 # UML Diagram
-<Coming Soon>
+Coming Soon
+### Class Diagram
+### Sequence Diagram
 
 [LegacyAccountsView.page]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/newInstance/src/pages/LegacyAccountsView.page>
 [LegacyAccountsController.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/newInstance/src/classes/LegacyAccountsController.cls>
@@ -92,13 +94,3 @@ Below are the different components of the applications:
 [APIResponse.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/oldInstance/src/classes/APIResponse.cls>
 [APIException.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/oldInstance/src/classes/APIException.cls>
 [APITest.cls]: <https://github.com/chandraThe1/sfdc-case-study/blob/master/oldInstance/src/classes/APITest.cls>
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
