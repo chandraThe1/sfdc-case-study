@@ -11,21 +11,25 @@ The following assumptions were made when creating this application.
 
 # Architecture
 ### Overview
+Below is the overview of the system architecture.
+![Architecture Overview](artifacts/ArchOverview.png)
 
-### Class Diagram
-
+### Class Diagrams
+Below are the class diagrams for the new and legacy instance classes.
 #### New Instance
 ![New Instance Class Diagram](artifacts/NewInstance-ClassDiagram.png)
 
 #### Legacy Instance
 ![Legacy Instance Class Diagram](artifacts/OldInstance-ClassDiagram.png)
 
-### Sequence Diagram
+### Sequence Diagrams
 
 #### UI Flow
 ![New Instance Flow](artifacts/NewInstaceFlow.png)
+
 #### Get API Flow
 ![Get API Flow](artifacts/GetAccountsFlow.png)
+
 #### Query API Flow
 ![Query API Flow](artifacts/QueryAccountsFlow.png)
 
@@ -89,6 +93,11 @@ Below are the different components of the applications:
 ### Triggers
 - Based on Assumption 2, the Trigger option was ruled out. If a "after insert" trigger was used on the Account, it will always query and match the legacy account irrespective of where the account was created from.
 
+# Out of the box alternatives
+The following are the alternative solutions using out of the box features provided by Salesforce.
+- Lightning Connect allows you to query and display data from External sources within the current org. So, if we create ORG-2 Account as External objects in ORG-1, we should be able to display all accounts from ORG-2 instance at real time and also query for matching names.
+- Salesforce to Salesforce. This feature allows two different Salesforce instances to "Connect" to each other. Once the connection has been made, we can publish/subsribe multiple objects. For instance we can "Publish" all accounts from ORG-2 and see them as "Connected Accounts" in ORG-1 if we have subscribed to it.
+- If development needs to be done, we can use a StandardSetController on ORG-1 and invoke the Standard REST Query API on ORG-2. The API can return paginated set which can be rendered on ORG-1.
 
 
 [LegacyAccountsView.page]: <newInstance/src/pages/LegacyAccountsView.page>
